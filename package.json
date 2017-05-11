@@ -1,0 +1,15 @@
+{
+  "name": "nodecloud",
+  "version": "0.1.0",
+  "description": "Unified API for cloud providers",
+  "main": "index.js",
+  "repository": "https://github.com/scorelab/nodecloud",
+  "author": "rajikaimal <inbox.rajika@gmail.com>",
+  "license": "Apache License 2.0",
+  "dependencies": {
+    "aws-sdk": "^2.49.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.3.1"
+  }
+}
