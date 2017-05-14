@@ -1,0 +1,27 @@
+{
+  "name": "nodecloud",
+  "version": "1.0.0",
+  "description": "NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ). This will make building products among multiple cloud services and its services easier for the developer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scorelab/nodecloud.git"
+  },
+  "keywords": [
+    "nodecloud",
+    "nodejs",
+    "node",
+    "node-cloud",
+    "node-aws",
+    "node-azure"
+  ],
+  "author": "scorelab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scorelab/nodecloud/issues"
+  },
+  "homepage": "https://github.com/scorelab/nodecloud#readme"
+}
