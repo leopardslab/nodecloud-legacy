@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "description": "Unified API for cloud providers",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
   "repository": "https://github.com/scorelab/nodecloud",
   "author": "scorelab",
   "license": "Apache-2.0",
   "dependencies": {
-    "aws-sdk": "^2.50.0"
+    "aws-sdk": "^2.50.0",
+    "config": "^1.26.1",
+    "keymirror": "^0.1.1"
   },
   "keywords": [
     "nodecloud",
@@ -20,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/scorelab/nodecloud/issues"
   },
-  "homepage": "https://github.com/scorelab/nodecloud#readme"
+  "homepage": "https://github.com/scorelab/nodecloud#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.4.1"
+  }
 }
