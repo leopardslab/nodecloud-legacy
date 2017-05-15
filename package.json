@@ -2,12 +2,12 @@
   "name": "nodecloud",
   "version": "0.1.0",
   "description": "Unified API for cloud providers",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/scorelab/nodecloud",
-  "author": "rajikaimal <inbox.rajika@gmail.com>",
-  "license": "Apache License 2.0",
+  "author": "scorelab",
+  "license": "Apache-2.0",
   "dependencies": {
-    "aws-sdk": "^2.49.0"
+    "aws-sdk": "^2.50.0"
   },
   "keywords": [
     "nodecloud",
@@ -17,8 +17,6 @@
     "node-aws",
     "node-azure"
   ],
-  "author": "scorelab",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/scorelab/nodecloud/issues"
   },
