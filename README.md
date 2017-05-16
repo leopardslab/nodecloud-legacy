@@ -1,6 +1,6 @@
 # NodeCloud
 NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ).
-This will make building products among multiple cloud services and its services easier for the developer. 
+This will make building products among multiple cloud services and its services easier for the developer.
 
 ## Service Types
 
@@ -10,9 +10,9 @@ This will make building products among multiple cloud services and its services 
 
 **Container** _allows users to install and deploy containers onto container based virtualization platforms_
 
-**DNS** _allows you to manage DNS as A Service_ 
+**DNS** _allows you to manage DNS as A Service_
 
-**Backup** _allows you to manage Backup as A Service_ 
+**Backup** _allows you to manage Backup as A Service_
 
 ----
 ## Service Providers
@@ -26,4 +26,25 @@ This will make building products among multiple cloud services and its services 
 - Amazon EBS Backup Driver (Backup)
 ----
 
-## Intialize
+## Install
+
+> WIP
+
+## Usage
+
+```js
+const nodeCloud = require('nodecloud');
+const config = require('./config');
+
+// AWS
+const ncAWS = nodeCloud.getProvider('aws');
+const awsStorage = ncAWS({ key: config.aws.S3, service: 'S3' });
+
+awsStorage.createStorage({ Bucket: 'MyBucket', Body: 'Hello !' })
+  .then(res => {
+    console.log(`All done ! ${res}`);
+  })
+  .catch(err => {
+    console.log(`Oops something happened ${err}`);
+  });
+```
