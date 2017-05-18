@@ -48,3 +48,17 @@ awsStorage.createStorage({ Bucket: 'MyBucket', Body: 'Hello !' })
     console.log(`Oops something happened ${err}`);
   });
 ```
+
+## Development setup
+
+```
+$ git clone https://github.com/scorelab/nodecloud
+$ cd nodecloud
+$ yarn install
+```
+
+### Run unit tests
+
+```
+$ yarn test
+```
