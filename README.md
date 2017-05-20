@@ -33,14 +33,27 @@ This will make building products among multiple cloud services and its services 
 ## Usage
 
 ```js
-const nodeCloud = require('nodecloud');
-const config = require('./config');
-
+const nodeCloud = require("nodecloud");
 // AWS
-const ncAWS = nodeCloud.getProvider('aws');
-const awsStorage = ncAWS({ key: config.aws.S3, service: 'S3' });
+const ncAWS = nodeCloud.getProvider("AWS");
+const options = {
+  apiVersion: "2016-11-15"
+};
 
-awsStorage.createStorage({ Bucket: 'MyBucket', Body: 'Hello !' })
+const params = {
+  ImageId: "ami-10fd7020", // amzn-ami-2011.09.1.x86_64-ebs
+  InstanceType: "t1.micro",
+  MinCount: 1,
+  MaxCount: 1
+};
+const instanceParams = {
+  Key: "Name",
+  Value: "Node Cloud demo"
+};
+
+const ec2 = ncAWS.EC2(options);
+ec2
+  .createInstance(params, instanceParams)
   .then(res => {
     console.log(`All done ! ${res}`);
   })
