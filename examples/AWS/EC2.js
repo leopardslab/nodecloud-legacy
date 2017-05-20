@@ -1,7 +1,7 @@
 const nodeCloud = require("../../lib/");
 const ncAWS = nodeCloud.getProvider(
   "AWS",
-  "/PATH/TO/config.json"
+  "/home/rajika/projects/gsoc/examples/AWS/config.json"
 );
 const options = {
   apiVersion: "2016-11-15"
@@ -43,7 +43,7 @@ const ec2 = ncAWS.EC2(options);
 //   });
 
 const params = {
-  InstanceIds: [""],
+  InstanceIds: ["i-0e8463a71076e3d5f"],
   DryRun: false
 };
 
