@@ -1,10 +1,10 @@
-// const chai = require('chai');
-// const assert = chai.assert;
-// const providers = require('../lib/providers');
+const chai = require('chai');
+const assert = chai.assert;
+const providers = require('../lib/providers');
 
-// describe('Providers list', () => {
-//   it('should check for providers', (done) => {
-//     assert.typeOf(providers, 'object');
-//     done();
-//   });
-// });
+describe('Providers list', () => {
+  it('should check for providers', (done) => {
+    assert.typeOf(providers, 'object');
+    done();
+  });
+});

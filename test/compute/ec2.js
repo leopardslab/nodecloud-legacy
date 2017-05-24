@@ -6,7 +6,7 @@ const nock = require("nock");
 
 const ncAWS = nodeCloud.getProvider(
   providers.AWS,
-  "/home/rajika/projects/gsoc/config.json"
+  process.env.ncconf
 );
 const options = {
   apiVersion: "2016-11-15"
