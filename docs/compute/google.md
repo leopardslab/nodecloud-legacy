@@ -27,6 +27,7 @@ const gceCompute = ncGoogle.compute();
 gceCompute
   .create({
     zone: "us-central1-a",
+    os: "ubuntu",
     name: "ubuntu-http"
   })
   .then(res => {
@@ -60,8 +61,8 @@ gceCompute.stop({
       vmName: 'ubuntu-http'
     })
   .then(res => {
-    var operation = res[0];
-    var apiResponse = res[1];
+    const operation = res[0];
+    const apiResponse = res[1];
     console.log(operation);
     // console.log(apiResponse)
   })
@@ -78,8 +79,8 @@ gceCompute.start({
       vmName: 'ubuntu-http'
     })
   .then(res => {
-    var operation = res[0];
-    var apiResponse = res[1];
+    const operation = res[0];
+    const apiResponse = res[1];
     console.log(operation);
     // console.log(apiResponse)
   })
@@ -96,8 +97,8 @@ gceCompute.reboot({
       vmName: 'ubuntu-http'
     })
   .then(res => {
-    var operation = res[0];
-    var apiResponse = res[1];
+    const operation = res[0];
+    const apiResponse = res[1];
     console.log(operation);
   })
   .catch(err => {
@@ -113,8 +114,8 @@ gceCompute.destroy({
       vmName: 'ubuntu-http'
     })
   .then(res => {
-    var operation = res[0];
-    var apiResponse = res[1];
+    const operation = res[0];
+    const apiResponse = res[1];
     console.log(operation);
   })
   .catch(err => {

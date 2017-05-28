@@ -10,6 +10,7 @@ const gceCompute = ncGoogle.compute();
 gceCompute
   .create({
     zone: "us-central1-a",
+    os: "ubuntu",
     name: "ubuntu-http"
   })
   .then(res => {
