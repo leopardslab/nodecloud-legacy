@@ -1,6 +1,6 @@
-# NodeCloud compute
+# NodeCloud compute - AWS
 
-## Configure AWS Credentials
+## Configure AWS credentials
 
 Create `config.json` as follows,
 
@@ -24,7 +24,7 @@ const ncAWS = nodeCloud.getProvider(
 
 ### Create instance
 
-```jsjsjs
+```js
 const options = {
   apiVersion: "2016-11-15"
 };
@@ -102,7 +102,7 @@ ec2
 
 ### Reboot instance
 
-```jsjs
+```js
 ec2
   .reboot(params)
   .then(res => {
@@ -124,5 +124,4 @@ ec2
   .catch(err => {
     console.log(err);
   });
-
 ```

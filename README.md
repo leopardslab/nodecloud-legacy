@@ -51,7 +51,7 @@ const instanceParams = {
   Value: "Node Cloud demo"
 };
 
-const ec2 = ncAWS.EC2(options);
+const ec2 = ncAWS.compute(options);
 ec2
   .createInstance(params, instanceParams)
   .then(res => {
