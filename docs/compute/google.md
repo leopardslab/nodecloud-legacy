@@ -40,7 +40,7 @@ gceCompute
 
 ### List instances
 
-```jsjs
+```js
 gceCompute.list({
       maxResults: 1
     })
