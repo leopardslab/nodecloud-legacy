@@ -13,7 +13,7 @@ const ec2 = ncAWS.EBS(options);
 describe("AWS EBS", () => {
   before(() => {});
 
-  it("should create EBS image", done => {
+  it("should not create EBS image", done => {
     nock("https://ec2.us-west-2.amazonaws.com").post("/").reply(200, {});
 
     const params = {};
