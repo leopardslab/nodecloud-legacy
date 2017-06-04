@@ -7,14 +7,24 @@ const ncGoogle = nodeCloud.getProvider("google", {
 const gceCompute = ncGoogle.compute();
 
 // create VM
-gceCompute
-  .create({
-    zone: "us-central1-a",
-    os: "ubuntu",
-    name: "ubuntu-http"
-  })
+// gceCompute
+//   .create({
+//     zone: "us-central1-a",
+//     os: "ubuntu",
+//     name: "ubuntu-http"
+//   })
+//   .then(res => {
+//     console.log(res);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+
+gceCompute.list({
+      maxResults: 1
+    })
   .then(res => {
-    console.log(res);
+    // console.log(res);
   })
   .catch(err => {
     console.log(err);
