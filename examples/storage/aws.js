@@ -39,5 +39,5 @@ ebs
     console.log(`All done ! ${res}`);
   })
   .catch(err => {
-    console.log(`Oops something happened ${err}`);
+    console.error(`Oops something happened ${err}`);
   });
