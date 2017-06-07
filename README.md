@@ -1,4 +1,7 @@
 # NodeCloud
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a7d5904eead949aab423885f8c58287f)](https://www.codacy.com/app/ScoreLab/nodecloud?utm_source=github.com&utm_medium=referral&utm_content=scorelab/nodecloud&utm_campaign=badger)
+
 NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ).
 This will make building products among multiple cloud services and its services easier for the developer.
 
