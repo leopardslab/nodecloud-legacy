@@ -21,10 +21,8 @@ describe('AWS EBS', () => {
     ebs
       .create(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
-      })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
+        assert.typeOf(res, 'object');
+        done();
       });
   });
 
@@ -39,10 +37,8 @@ describe('AWS EBS', () => {
     ebs
       .createSnapshot(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
-      })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
+        assert.typeOf(res, 'object');
+        done();
       });
   });
 
@@ -56,11 +52,9 @@ describe('AWS EBS', () => {
     ebs
       .createSnapshot(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
+        assert.typeOf(res, 'object');
+        done();
       })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
-      });
   });
 
   it('should describe EBS snapshot', (done) => {
@@ -73,10 +67,8 @@ describe('AWS EBS', () => {
     ebs
       .describeSnapshots(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
-      })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
+        assert.typeOf(res, 'object');
+        done();
       });
   });
 
@@ -91,10 +83,8 @@ describe('AWS EBS', () => {
     ebs
       .describeVolume(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
-      })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
+        assert.typeOf(res, 'object');
+        done();
       });
   });
 
@@ -106,10 +96,8 @@ describe('AWS EBS', () => {
     ebs
       .describeVolumes(params)
       .then((res) => {
-        console.log(`All done ! ${res}`);
-      })
-      .catch((err) => {
-        console.error(`Oops something happened ${err}`);
+        assert.typeOf(res, 'object');
+        done();
       });
   });
 });
