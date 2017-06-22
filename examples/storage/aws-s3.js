@@ -9,11 +9,13 @@ const s3 = ncAWS.s3(options);
 
 // create S3 Bucket
 const params = {
-  Bucket: 'examplebucket',
+  Bucket: 'ncbucketcr',
   CreateBucketConfiguration: {
-    LocationConstraint: 'eu-west-1',
+    LocationConstraint: 'us-west-2',
   },
 };
+
+console.log('creating bucket');
 
 s3
   .create(params)
