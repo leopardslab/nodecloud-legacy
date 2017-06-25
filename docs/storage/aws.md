@@ -22,7 +22,7 @@ const ncAWS = nodeCloud.getProvider(
 );
 ```
 
-## Create image
+### Create image
 
 ```js
 const params = {
@@ -59,7 +59,7 @@ ebs
   });
 ```
 
-## Create snapshot
+### Create snapshot
 
 ```js
 const params = {
@@ -77,7 +77,7 @@ ebs
   });
 ```
 
-## Delete snapshot
+### Delete snapshot
 
 ```js
 const params = {
@@ -109,7 +109,7 @@ ebs
 
 ```
 
-## Describe snapshot
+### Describe snapshot
 
 ```js
 const params = {
@@ -128,7 +128,7 @@ ebs
   });
 ```
 
-## Describe volume
+### Describe volume
 
 ```js
 const params = {
@@ -146,7 +146,7 @@ ebs
   });
 ```
 
-## Describe volumes
+### Describe volumes
 
 ```js
 const params = {};
