@@ -76,7 +76,7 @@ s3
   .createMultipartUpload(params)
   .then(res => {
     console.log(`Upload completed ! ${res}`);
-    console.log(res);
+    console.error(res);
   })
   .catch(err => {
     console.error(`Oops something happened ${err}`);
@@ -92,7 +92,7 @@ s3
     console.log(res);
   })
   .catch((err) => {
-    console.log(err);
+    console.error(err);
   });
 ```
 
@@ -106,6 +106,6 @@ s3
     console.log(data);
   })
   .catch(err => {
-    console.log(err);
+    console.error(err);
   });
 ```

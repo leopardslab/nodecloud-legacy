@@ -21,7 +21,6 @@ s3
   .create(params)
   .then(res => {
     console.log(`Bucket created ! ${res}`);
-    console.log(res);
   })
   .catch(err => {
     console.error(`Oops something happened ${err}`);
