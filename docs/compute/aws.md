@@ -54,7 +54,7 @@ ec2
 
 ### List instances
 
-```jsjs
+```js
 const params = {
   DryRun: false
 };
