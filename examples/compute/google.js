@@ -1,7 +1,7 @@
-const nodeCloud = require("../../lib/");
-const ncGoogle = nodeCloud.getProvider("google", {
+const nodeCloud = require('../../lib/');
+const ncGoogle = nodeCloud.getProvider('google', {
   projectId: process.env.GCLOUD_PROJECT,
-  keyFilename: process.env.GCLOUD_KEY_FILE_NAME
+  keyFilename: process.env.GCLOUD_KEY_FILE_NAME,
 });
 // get compute object for Google
 const gceCompute = ncGoogle.compute();
@@ -21,11 +21,11 @@ const gceCompute = ncGoogle.compute();
 //   });
 
 gceCompute.list({
-      maxResults: 1
-    })
-  .then(res => {
+  maxResults: 1,
+})
+  .then((res) => {
     // console.log(res);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
