@@ -71,7 +71,8 @@ elb
     console.log(`Load balancer deleted ! ${res}`);
   })
   .catch(err => {
-    conso
+    console.error(`Oops something happened ${err}`);
+  });
 ```
 
 ### List loadbalancers
