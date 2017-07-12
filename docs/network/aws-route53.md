@@ -81,5 +81,39 @@ route53
   .catch((err) => {
     console.error(err);
   });
+```
 
+### Change record sets
+
+```
+const params = {
+  ChangeBatch: {
+    Changes: [
+      {
+        Action: "CREATE",
+          ResourceRecordSet: {
+          Name: "example.com",
+          ResourceRecords: [
+            {
+              Value: "192.0.2.44"
+            }
+          ],
+          TTL: 60,
+          Type: "A"
+        }
+      }
+    ],
+    Comment: "Web server for example.com"
+  },
+  HostedZoneId: "Z3M3LMPEXAMPLE"
+};
+
+route53
+  .changeRecordSets(params)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 ```
