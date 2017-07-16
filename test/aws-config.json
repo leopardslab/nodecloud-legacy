@@ -1,5 +1,0 @@
-{
-  "aws_access_key_id": process.env.aws_access_key_id,
-  "secretAccessKey": process.env.secretAccessKey,
-  "region": "us-west-2"
-}

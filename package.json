@@ -4,7 +4,7 @@
   "description": "Unified API for cloud providers",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --recursive --timeout=5000"
+    "test": "mocha test/compute/ec2.js"
   },
   "repository": "https://github.com/scorelab/nodecloud",
   "author": "scorelab",
