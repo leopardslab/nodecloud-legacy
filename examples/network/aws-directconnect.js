@@ -5,7 +5,7 @@ const options = {
 };
 
 // get peering object for AWS
-const elb = ncAWS.peering(options);
+const awsDc = ncAWS.peering(options);
 
 const params = {
   bandwidth: 'STRING_VALUE',
