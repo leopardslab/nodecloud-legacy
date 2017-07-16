@@ -7,7 +7,7 @@ describe('Base provider', () => {
   it('should return AWS provider', (done) => {
     const ncAWS = new ncProvider(
       providers.AWS,
-      process.env.ncconf,
+      null,
     );
 
     assert.typeOf(ncAWS, 'object');
