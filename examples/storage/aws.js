@@ -10,22 +10,6 @@ const ebs = ncAWS.storage(options);
 const params = {
   InstanceId: 'STRING_VALUE', /* required */
   Name: 'STRING_VALUE', /* required */
-  BlockDeviceMappings: [
-    {
-      DeviceName: 'STRING_VALUE',
-      Ebs: {
-        DeleteOnTermination: true || false,
-        Encrypted: true || false,
-        Iops: 0,
-        SnapshotId: 'STRING_VALUE',
-        VolumeSize: 0,
-        VolumeType: standard | io1 | gp2 | sc1 | st1,
-      },
-      NoDevice: 'STRING_VALUE',
-      VirtualName: 'STRING_VALUE',
-    },
-    /* more items */
-  ],
   Description: 'STRING_VALUE',
   DryRun: true || false,
   NoReboot: true || false,
