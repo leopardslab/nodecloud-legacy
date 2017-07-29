@@ -164,4 +164,51 @@ describe('AWS RDS', () => {
       done();
     });
   });
+
+  it('should delete DB snapshot', (done) => {
+    nock('https://rds.us-west-2.amazonaws.com:443', { encodedQueryParams: true })
+      .post('/', 'Action=DeleteDBSnapshot&DBSnapshotIdentifier=nodecloud-sp2&Version=2014-10-31')
+      .reply(200, '<DeleteDBSnapshotResponse xmlns="http://rds.amazonaws.com/doc/2014-10-31/">\n  <DeleteDBSnapshotResult>\n    <DBSnapshot>\n      <AllocatedStorage>5</AllocatedStorage>\n      <AvailabilityZone>us-west-2a</AvailabilityZone>\n      <DBInstanceIdentifier>nodecloud</DBInstanceIdentifier>\n      <Engine>mysql</Engine>\n      <VpcId>vpc-beb7b4d9</VpcId>\n      <PercentProgress>100</PercentProgress>\n      <IAMDatabaseAuthenticationEnabled>false</IAMDatabaseAuthenticationEnabled>\n      <DBSnapshotIdentifier>nodecloud-sp2</DBSnapshotIdentifier>\n      <OptionGroupName>default:mysql-5-6</OptionGroupName>\n      <EngineVersion>5.6.35</EngineVersion>\n      <MasterUsername>rajika</MasterUsername>\n      <SnapshotType>manual</SnapshotType>\n      <InstanceCreateTime>2017-07-29T16:30:50.768Z</InstanceCreateTime>\n      <DBSnapshotArn>arn:aws:rds:us-west-2:878299302707:snapshot:nodecloud-sp2</DBSnapshotArn>\n      <Encrypted>false</Encrypted>\n      <Port>3306</Port>\n      <LicenseModel>general-public-license</LicenseModel>\n      <SnapshotCreateTime>2017-07-29T16:39:28.769Z</SnapshotCreateTime>\n      <StorageType>standard</StorageType>\n      <Status>deleted</Status>\n    </DBSnapshot>\n  </DeleteDBSnapshotResult>\n  <ResponseMetadata>\n    <RequestId>27fe09db-7482-11e7-92a7-31b3e942b2d6</RequestId>\n  </ResponseMetadata>\n</DeleteDBSnapshotResponse>\n', ['x-amzn-RequestId',
+        '27fe09db-7482-11e7-92a7-31b3e942b2d6',
+        'Content-Type',
+        'text/xml',
+        'Content-Length',
+        '1335',
+        'Date',
+        'Sat, 29 Jul 2017 17:20:02 GMT']);
+
+    const params = {
+      DBSnapshotIdentifier: 'nodecloud-sp2',
+    };
+
+    rds.deleteDBSnapshot(params).then((res) => {
+      assert.equal(res.DBSnapshot.DBSnapshotIdentifier, 'nodecloud-sp2');
+      done();
+    });
+  });
+
+  it('should delete DB instance', (done) => {
+    nock('https://rds.us-west-2.amazonaws.com:443', { encodedQueryParams: true })
+      .post('/', 'Action=DeleteDBInstance&DBInstanceIdentifier=nodecloud&FinalDBSnapshotIdentifier=nodecloud&Version=2014-10-31')
+      .reply(200, '<DeleteDBInstanceResponse xmlns="http://rds.amazonaws.com/doc/2014-10-31/">\n  <DeleteDBInstanceResult>\n    <DBInstance>\n      <AllocatedStorage>5</AllocatedStorage>\n      <DBParameterGroups>\n        <DBParameterGroup>\n          <DBParameterGroupName>default.mysql5.6</DBParameterGroupName>\n          <ParameterApplyStatus>in-sync</ParameterApplyStatus>\n        </DBParameterGroup>\n      </DBParameterGroups>\n      <AvailabilityZone>us-west-2a</AvailabilityZone>\n      <DBSecurityGroups/>\n      <EngineVersion>5.6.35</EngineVersion>\n      <MasterUsername>rajika</MasterUsername>\n      <InstanceCreateTime>2017-07-29T16:30:50.768Z</InstanceCreateTime>\n      <DBInstanceClass>db.t1.micro</DBInstanceClass>\n      <ReadReplicaDBInstanceIdentifiers/>\n      <MonitoringInterval>0</MonitoringInterval>\n      <DBInstanceStatus>deleting</DBInstanceStatus>\n      <BackupRetentionPeriod>1</BackupRetentionPeriod>\n      <OptionGroupMemberships>\n        <OptionGroupMembership>\n          <OptionGroupName>default:mysql-5-6</OptionGroupName>\n          <Status>in-sync</Status>\n        </OptionGroupMembership>\n      </OptionGroupMemberships>\n      <LatestRestorableTime>2017-07-29T17:20:00Z</LatestRestorableTime>\n      <CACertificateIdentifier>rds-ca-2015</CACertificateIdentifier>\n      <DbInstancePort>0</DbInstancePort>\n      <DbiResourceId>db-NH5SAUSODVRMGDFOCWW74POB4Y</DbiResourceId>\n      <PreferredBackupWindow>12:02-12:32</PreferredBackupWindow>\n      <DBInstanceIdentifier>nodecloud</DBInstanceIdentifier>\n      <DBInstanceArn>arn:aws:rds:us-west-2:878299302707:db:nodecloud</DBInstanceArn>\n      <Endpoint>\n        <HostedZoneId>Z1PVIF0B656C1W</HostedZoneId>\n        <Address>nodecloud.cba0q0yhdg4h.us-west-2.rds.amazonaws.com</Address>\n        <Port>3306</Port>\n      </Endpoint>\n      <Engine>mysql</Engine>\n      <PubliclyAccessible>true</PubliclyAccessible>\n      <IAMDatabaseAuthenticationEnabled>false</IAMDatabaseAuthenticationEnabled>\n      <PerformanceInsightsEnabled>false</PerformanceInsightsEnabled>\n      <MultiAZ>false</MultiAZ>\n      <DomainMemberships/>\n      <StorageEncrypted>false</StorageEncrypted>\n      <DBSubnetGroup>\n        <VpcId>vpc-beb7b4d9</VpcId>\n        <Subnets>\n          <Subnet>\n            <SubnetStatus>Active</SubnetStatus>\n            <SubnetIdentifier>subnet-0c418557</SubnetIdentifier>\n            <SubnetAvailabilityZone>\n              <Name>us-west-2c</Name>\n            </SubnetAvailabilityZone>\n          </Subnet>\n          <Subnet>\n            <SubnetStatus>Active</SubnetStatus>\n            <SubnetIdentifier>subnet-39f8a75e</SubnetIdentifier>\n            <SubnetAvailabilityZone>\n              <Name>us-west-2b</Name>\n            </SubnetAvailabilityZone>\n          </Subnet>\n          <Subnet>\n            <SubnetStatus>Active</SubnetStatus>\n            <SubnetIdentifier>subnet-9ca9dfd5</SubnetIdentifier>\n            <SubnetAvailabilityZone>\n              <Name>us-west-2a</Name>\n            </SubnetAvailabilityZone>\n          </Subnet>\n        </Subnets>\n        <SubnetGroupStatus>Complete</SubnetGroupStatus>\n        <DBSubnetGroupDescription>default</DBSubnetGroupDescription>\n        <DBSubnetGroupName>default</DBSubnetGroupName>\n      </DBSubnetGroup>\n      <VpcSecurityGroups>\n        <VpcSecurityGroupMembership>\n          <VpcSecurityGroupId>sg-23562758</VpcSecurityGroupId>\n          <Status>active</Status>\n        </VpcSecurityGroupMembership>\n      </VpcSecurityGroups>\n      <LicenseModel>general-public-license</LicenseModel>\n      <PendingModifiedValues>\n        <DBInstanceIdentifier>ncrd</DBInstanceIdentifier>\n      </PendingModifiedValues>\n      <PreferredMaintenanceWindow>tue:08:57-tue:09:27</PreferredMaintenanceWindow>\n      <StorageType>standard</StorageType>\n      <AutoMinorVersionUpgrade>true</AutoMinorVersionUpgrade>\n      <CopyTagsToSnapshot>false</CopyTagsToSnapshot>\n    </DBInstance>\n  </DeleteDBInstanceResult>\n  <ResponseMetadata>\n    <RequestId>913c7c2f-7482-11e7-9604-e773399be269</RequestId>\n  </ResponseMetadata>\n</DeleteDBInstanceResponse>\n', ['x-amzn-RequestId',
+        '913c7c2f-7482-11e7-9604-e773399be269',
+        'Content-Type',
+        'text/xml',
+        'Content-Length',
+        '4032',
+        'Vary',
+        'Accept-Encoding',
+        'Date',
+        'Sat, 29 Jul 2017 17:22:58 GMT']);
+
+    const params = {
+      DBInstanceIdentifier: 'nodecloud',
+      FinalDBSnapshotIdentifier: 'nodecloud',
+    };
+
+    rds.deleteDBInstance(params).then((res) => {
+      assert.equal(res.DBInstance.DBInstanceIdentifier, 'nodecloud');
+      done();
+    });
+  });
 });
