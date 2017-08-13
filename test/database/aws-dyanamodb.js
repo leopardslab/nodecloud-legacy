@@ -79,7 +79,7 @@ describe('AWS DynamoDB', () => {
     });
   });
 
-  it('should update an entity', (done) => {
+  it('should update an item', (done) => {
     nock('https://dynamodb.us-west-2.amazonaws.com:443', { encodedQueryParams: true })
       .post('/', { ExpressionAttributeNames: { '#Y': 'Year' }, ExpressionAttributeValues: { ':y': { N: '2015' } }, Key: { artist: { S: 'Taylor Swift' } }, ReturnValues: 'ALL_NEW', TableName: 'Test', UpdateExpression: 'SET #Y = :y' })
       .reply(200, { Attributes: { artist: { S: 'Taylor Swift' }, Year: { N: '2015' } } }, ['Server',
@@ -122,7 +122,7 @@ describe('AWS DynamoDB', () => {
     });
   });
 
-  it('should update an entity', (done) => {
+  it('should query a table', (done) => {
     nock('https://dynamodb.us-west-2.amazonaws.com:443', { encodedQueryParams: true })
       .post('/', { ExpressionAttributeValues: { ':v1': { S: 'Taylor Swift' } }, KeyConditionExpression: 'artist = :v1', TableName: 'Test' })
       .reply(200, { Count: 1, Items: [{ artist: { S: 'Taylor Swift' }, Year: { N: '2015' } }], ScannedCount: 1 }, ['Server',
