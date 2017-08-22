@@ -8,7 +8,7 @@ const ncAWS = nodeCloud.getProvider(providers.AWS, process.env.ncconf);
 const options = {
   apiVersion: '2016-11-15',
 };
-const s3 = ncAWS.s3(options);
+const s3 = ncAWS.bucket(options);
 
 describe('AWS S3', () => {
   before(() => {});

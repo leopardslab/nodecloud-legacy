@@ -2,5 +2,6 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    "no-underscore-dangle": [2, { "allowAfterThis": true }]
 }
