@@ -71,7 +71,7 @@ ec2
 ## Development setup
 
 ```
-$ git clone https://github.com/scorelab/nodecloud
+$ git clone https://github.com/cloudlibz/nodecloud
 $ cd nodecloud
 $ yarn install
 ```

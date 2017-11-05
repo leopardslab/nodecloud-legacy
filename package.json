@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/compute/ec2.js"
   },
-  "repository": "https://github.com/scorelab/nodecloud",
+  "repository": "https://github.com/cloudlibz/nodecloud",
   "author": "scorelab",
   "license": "Apache-2.0",
   "dependencies": {
@@ -24,9 +24,9 @@
     "node-azure"
   ],
   "bugs": {
-    "url": "https://github.com/scorelab/nodecloud/issues"
+    "url": "https://github.com/cloudlibz/nodecloud/issues"
   },
-  "homepage": "https://github.com/scorelab/nodecloud#readme",
+  "homepage": "https://github.com/cloudlibz/nodecloud#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.19.0",
