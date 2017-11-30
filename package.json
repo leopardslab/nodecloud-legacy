@@ -29,10 +29,17 @@
   "homepage": "https://github.com/cloudlibz/nodecloud#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^3.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
-    "mocha": "^3.4.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3",
     "nock": "^9.0.13"
   }
+"scripts": {
+  // ...
+  "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec"
+  // ...
+}
 }
