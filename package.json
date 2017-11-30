@@ -4,7 +4,7 @@
   "description": "Unified API for cloud providers",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/compute/ec2.js"
+    "test": "mocha test/compute/ec2.js",
     "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec"
   },
   "repository": "https://github.com/cloudlibz/nodecloud",
