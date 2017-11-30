@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/compute/ec2.js"
+    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec"
   },
   "repository": "https://github.com/cloudlibz/nodecloud",
   "author": "scorelab",
@@ -37,9 +38,4 @@
     "mocha": "^3.5.3",
     "nock": "^9.0.13"
   }
-"scripts": {
-  // ...
-  "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec"
-  // ...
-}
 }
