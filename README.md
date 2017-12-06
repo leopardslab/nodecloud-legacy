@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/nodecloud.svg)](https://badge.fury.io/js/nodecloud)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://www.npmjs.com/package/nodecloud)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a7d5904eead949aab423885f8c58287f)](https://www.codacy.com/app/ScoreLab/nodecloud?utm_source=github.com&utm_medium=referral&utm_content=scorelab/nodecloud&utm_campaign=badger)
-[![Build Status](https://travis-ci.org/scorelab/nodecloud.svg?branch=master)](https://travis-ci.org/scorelab/nodecloud)
+[![Build Status](https://travis-ci.org/cloudlibz/nodecloud.svg?branch=master)](https://travis-ci.org/cloudlibz/nodecloud)
 
 NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ).
 This will make building products among multiple cloud services and its services easier for the developer.
