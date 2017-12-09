@@ -1,4 +1,5 @@
 const nodeCloud = require('../../lib/');
+
 const ncGoogle = nodeCloud.getProvider('google', {
   projectId: process.env.GCLOUD_PROJECT,
   keyFilename: process.env.GCLOUD_KEY_FILE_NAME,
@@ -23,9 +24,6 @@ const gceCompute = ncGoogle.compute();
 gceCompute.list({
   maxResults: 1,
 })
-  .then((res) => {
-    // console.log(res);
-  })
   .catch((err) => {
     console.log(err);
   });

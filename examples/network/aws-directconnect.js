@@ -1,4 +1,5 @@
 const nodeCloud = require('../../lib/');
+
 const ncAWS = nodeCloud.getProvider('AWS', process.env.ncconf);
 const options = {
   apiVersion: '2016-11-15',
@@ -17,9 +18,9 @@ const params = {
 // create connection
 awsDc
   .createConnection(params)
-  .then(res => {
+  .then((res) => {
     console.log(`Connection created ! ${res}`);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(`Oops something happened ${err}`);
   });
