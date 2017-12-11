@@ -3,5 +3,8 @@
     "plugins": [
         "import"
     ],
-    "no-underscore-dangle": [2, { "allowAfterThis": true }]
+    "rules": {
+        "no-underscore-dangle": [2, { "allowAfterThis": true }],
+        "linebreak-style": ["error", "windows"]
+    }
 }

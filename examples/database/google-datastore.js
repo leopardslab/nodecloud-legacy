@@ -1,4 +1,5 @@
 const nodeCloud = require('../../lib/');
+
 const ncGoogle = nodeCloud.getProvider('google', {
   projectId: process.env.GCLOUD_PROJECT,
   keyFilename: process.env.GCLOUD_KEY_FILE_NAME,
@@ -20,4 +21,4 @@ gcd.createItem(params)
   })
   .catch((err) => {
     console.error(err);
-  })
+  });
