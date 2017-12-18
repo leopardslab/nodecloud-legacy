@@ -43,26 +43,26 @@ ec2.list(params).then((res) => {
  });
 });
 
-it('should start EC2 instance', (done) => {
-  nock('https://ec2.us-west-2.amazonaws.com:443', {
-    encodedQueryParams: true,
-  })
-    .post(
-      '/',
-      'Action=StartInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
-    )
-    .reply(
-      412,
-      '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>25e96167-3d9b-4993-833c-c289dc609007</RequestID></Response>',
-      [
+  it('should start EC2 instance', (done) => {
+    nock('https://ec2.us-west-2.amazonaws.com:443', {
+      encodedQueryParams: true,
+    })
+      .post(
+       '/',
+       'Action=StartInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
+      )
+      .reply(
+        412,
+        '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>25e96167-3d9b-4993-833c-c289dc609007</RequestID></Response>',
+        [
         'Transfer-Encoding',
         'chunked',
         'Date',
         'Sat, 15 Jul 2017 13:58:34 GMT',
         'Server',
         'AmazonEC2',
-      ]
-    );
+        ]
+      );
 
   nock('https://ec2.us-west-2.amazonaws.com:443', {
     encodedQueryParams: true,
@@ -98,26 +98,26 @@ it('should start EC2 instance', (done) => {
   });
 });
 
-it('should stop EC2 instance', (done) => {
-  nock('https://ec2.us-west-2.amazonaws.com:443', {
-    encodedQueryParams: true,
-  })
-    .post(
-      '/',
-      'Action=StopInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
-    )
-    .reply(
-      412,
-      '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>2ac97f48-830a-4917-b882-ed3369f848da</RequestID></Response>',
-      [
+  it('should stop EC2 instance', (done) => {
+    nock('https://ec2.us-west-2.amazonaws.com:443', {
+      encodedQueryParams: true,
+    })
+     .post(
+       '/',
+       'Action=StopInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
+     )
+     .reply(
+       412,
+       '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>2ac97f48-830a-4917-b882-ed3369f848da</RequestID></Response>',
+       [
         'Transfer-Encoding',
         'chunked',
         'Date',
         'Sat, 15 Jul 2017 14:02:40 GMT',
         'Server',
         'AmazonEC2',
-      ]
-    );
+       ]
+     );
 
   nock('https://ec2.us-west-2.amazonaws.com:443', {
     encodedQueryParams: true,
@@ -154,26 +154,27 @@ it('should stop EC2 instance', (done) => {
   });
 });
 
-it('should reboot EC2 instance', (done) => {
-  nock('https://ec2.us-west-2.amazonaws.com:443', {
-    encodedQueryParams: true,
-  })
-    .post(
-      '/',
-      'Action=RebootInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
-    )
-    .reply(
-      412,
-      '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>cdc91732-8fb4-4147-a283-77e7d208d2bd</RequestID></Response>',
-      [
+  it('should reboot EC2 instance', (done) => {
+    nock('https://ec2.us-west-2.amazonaws.com:443', {
+      encodedQueryParams: true,
+    })
+     .post(
+       '/',
+       'Action=RebootInstances&DryRun=true&InstanceId.1=i-03fe236b187a898b6&Version=2016-11-15'
+     )
+     .reply(
+       412,
+       '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>cdc91732-8fb4-4147-a283-77e7d208d2bd</RequestID></Response>',
+       [ 
         'Transfer-Encoding',
         'chunked',
         'Date',
         'Sat, 15 Jul 2017 15:11:01 GMT',
         'Server',
         'AmazonEC2',
-      ]
-    );
+        localhost:3000/mongodb
+       ]
+      );
 
   nock('https://ec2.us-west-2.amazonaws.com:443', {
     encodedQueryParams: true,
@@ -210,18 +211,18 @@ it('should reboot EC2 instance', (done) => {
   });
 });
 
-it('should terminate/destroy EC2 instance', (done) => {
-  nock('https://ec2.us-west-2.amazonaws.com:443', {
-    encodedQueryParams: true,
-  })
-    .post(
-      '/',
-      'Action=TerminateInstances&DryRun=false&InstanceId.1=i-0de2ae0ba47d4f3f3&Version=2016-11-15'
-    )
-    .reply(
-      200,
-      '<?xml version="1.0" encoding="UTF-8"?>\n<TerminateInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">\n    <requestId>2b3404fe-d568-4158-a421-52210035242d</requestId>\n    <instancesSet>\n        <item>\n            <instanceId>i-0de2ae0ba47d4f3f3</instanceId>\n            <currentState>\n                <code>48</code>\n                <name>terminated</name>\n            </currentState>\n            <previousState>\n                <code>80</code>\n                <name>stopped</name>\n            </previousState>\n        </item>\n    </instancesSet>\n</TerminateInstancesResponse>',
-      [
+  it('should terminate/destroy EC2 instance', (done) => {
+    nock('https://ec2.us-west-2.amazonaws.com:443', {
+     encodedQueryParams: true,
+    })
+     .post(
+       '/',
+       'Action=TerminateInstances&DryRun=false&InstanceId.1=i-0de2ae0ba47d4f3f3&Version=2016-11-15'
+     )
+     .reply(
+       200,
+       '<?xml version="1.0" encoding="UTF-8"?>\n<TerminateInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2016-11-15/">\n    <requestId>2b3404fe-d568-4158-a421-52210035242d</requestId>\n    <instancesSet>\n        <item>\n            <instanceId>i-0de2ae0ba47d4f3f3</instanceId>\n            <currentState>\n                <code>48</code>\n                <name>terminated</name>\n            </currentState>\n            <previousState>\n                <code>80</code>\n                <name>stopped</name>\n            </previousState>\n        </item>\n    </instancesSet>\n</TerminateInstancesResponse>',
+       [
         'Content-Type',
         'text/xml;charset=UTF-8',
         'Transfer-Encoding',
@@ -232,8 +233,8 @@ it('should terminate/destroy EC2 instance', (done) => {
         'Sat, 15 Jul 2017 15:19:36 GMT',
         'Server',
         'AmazonEC2',
-      ]
-    );
+       ]
+      );
 
   const params = {
     InstanceIds: ['i-0de2ae0ba47d4f3f3'],
@@ -250,5 +251,5 @@ it('should terminate/destroy EC2 instance', (done) => {
       console.log(err);
       done();
     });
-});
+ });
 });
