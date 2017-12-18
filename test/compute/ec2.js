@@ -40,7 +40,7 @@ const params = {
 ec2.list(params).then((res) => {
   assert.typeOf(ncAWS, 'object');
   done();
-});
+ });
 });
 
 it('should start EC2 instance', (done) => {
