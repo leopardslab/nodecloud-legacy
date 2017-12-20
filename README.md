@@ -1,3 +1,5 @@
+![Node Cloud Logo](assets/logo.png)
+
 # NodeCloud
 
 [![npm version](https://badge.fury.io/js/nodecloud.svg)](https://badge.fury.io/js/nodecloud)
