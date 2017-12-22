@@ -5,20 +5,20 @@ const options = {
   apiVersion: '2016-11-15',
 };
 
-// get container object for AWS
-const ecs = ncAWS.container(options);
+// get compute object for AWS
+const ec2 = ncAWS.compute(options);
 
+// create AWS EC2 instance
 const params = {
-  clusters: [
-    'default',
-  ],
+  InstanceIds: ['i-0de2ae0ba47d4f3f3'],
+  DryRun: true,
 };
 
-// describe ECS clusters
-ecs.describeClusters(params)
+ec2
+  .stop(params)
   .then((res) => {
     console.log(res);
   })
   .catch((err) => {
-    console.error(err);
+    console.log(err);
   });
