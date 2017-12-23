@@ -165,14 +165,13 @@ ec2.list(params).then((res) => {
      .reply(
        412,
        '<?xml version="1.0" encoding="UTF-8"?>\n<Response><Errors><Error><Code>DryRunOperation</Code><Message>Request would have succeeded, but DryRun flag is set.</Message></Error></Errors><RequestID>cdc91732-8fb4-4147-a283-77e7d208d2bd</RequestID></Response>',
-       [ 
+       [
         'Transfer-Encoding',
         'chunked',
         'Date',
         'Sat, 15 Jul 2017 15:11:01 GMT',
         'Server',
-        'AmazonEC2',
-        localhost:3000/mongodb
+        'AmazonEC2'
        ]
       );
 
