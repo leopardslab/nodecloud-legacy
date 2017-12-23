@@ -1,5 +1,5 @@
-const nodeCloud = require("../../lib/");
-const ncGoogle = nodeCloud.getProvider("google", {
+const nodeCloud = require('../../lib/');
+const ncGoogle = nodeCloud.getProvider('google', {
   projectId: process.env.GCLOUD_PROJECT,
   keyFilename: process.env.GCLOUD_KEY_FILE_NAME,
 });
