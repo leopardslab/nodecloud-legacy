@@ -1,7 +1,7 @@
 const nodeCloud = require('../../lib/');
 const ncAWS = nodeCloud.getProvider('AWS', process.env.ncconf);
 const options = {
-  apiVersion: "2016-11-15",
+  apiVersion: '2016-11-15',
 };
 
 // get container object for AWS
