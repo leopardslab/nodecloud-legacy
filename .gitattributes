@@ -10,6 +10,7 @@
 *.yml text
 *.md text
 *.lock text
+*.sample text
 
 # Declare files that should have CRLF line endings on checkout.
 
