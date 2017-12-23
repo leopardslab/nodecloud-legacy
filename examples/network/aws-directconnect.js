@@ -1,17 +1,17 @@
-const nodeCloud = require("../../lib/");
-const ncAWS = nodeCloud.getProvider("AWS", process.env.ncconf);
+const nodeCloud = require('../../lib/');
+const ncAWS = nodeCloud.getProvider('AWS', process.env.ncconf);
 const options = {
-  apiVersion: "2016-11-15",
+  apiVersion: '2016-11-15',
 };
 
 // get peering object for AWS
 const awsDc = ncAWS.peering(options);
 
 const params = {
-  bandwidth: "STRING_VALUE",
-  connectionName: "STRING_VALUE",
-  location: "STRING_VALUE",
-  lagId: "STRING_VALUE"
+  bandwidth: 'STRING_VALUE',
+  connectionName: 'STRING_VALUE',
+  location: 'STRING_VALUE',
+  lagId: 'STRING_VALUE'
 };
 
 // create connection
