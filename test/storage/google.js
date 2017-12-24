@@ -1,23 +1,20 @@
-const chai = require("chai");
-const assert = chai.assert;
-const providers = require("../../lib/providers");
-const nodeCloud = require("../../lib");
-const nock = require("nock");
+const nodeCloud = require('../../lib');
 
-const ncGoogle = nodeCloud.getProvider("google", {
+const ncGoogle = nodeCloud.getProvider('google', {
   projectId: process.env.GCLOUD_PROJECT,
-  keyFilename: process.env.GCLOUD_KEY_FILE_NAME
+  keyFilename: process.env.GCLOUD_KEY_FILE_NAME,
 });
 const gceStorage = ncGoogle.storage();
 
-describe("Google/GCP storage", () => {
+describe('Google/GCP storage', () => {
   before(() => {});
 
-  it("should create peristent disk", done => {
+  it('should create peristent disk', (done) => {
     const params = {};
 
-    gceStorage.create(params).then(res => {
-      assert.equal(typeof res, "object");
+    gceStorage.create(params).then((res) => {
+      assert.equal(typeof res, 'object');
     });
   });
 });
+
