@@ -5,6 +5,6 @@
     ],
     "rules": {
         "no-underscore-dangle": [2, { "allowAfterThis": true }],
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": 0
     }
 }
