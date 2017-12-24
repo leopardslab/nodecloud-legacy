@@ -1,5 +1,4 @@
 const chai = require('chai');
-const assert = chai.assert;
 const providers = require('../../lib/providers');
 const nodeCloud = require('../../lib');
 const nock = require('nock');
