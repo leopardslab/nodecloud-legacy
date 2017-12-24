@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/compute/ec2.js",
     "coverage": "istanbul --include-all-sources cover _mocha -- -R dot --recursive test/",
-    "lint": "eslint lib; eslint test; exit 0"
+    "lint": "eslint"
   },
   "repository": "https://github.com/cloudlibz/nodecloud",
   "author": "scorelab",
