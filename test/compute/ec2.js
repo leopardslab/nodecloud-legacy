@@ -171,8 +171,7 @@ ec2.list(params).then((res) => {
         'Date',
         'Sat, 15 Jul 2017 15:11:01 GMT',
         'Server',
-        'AmazonEC2',
-        localhost:3000/mongodb
+        'AmazonEC2'
        ]
       );
 
