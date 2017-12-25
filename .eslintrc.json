@@ -4,7 +4,6 @@
         "import"
     ],
     "rules": {
-        "no-underscore-dangle": [2, { "allowAfterThis": true }],
-        "linebreak-style": ["error", "windows"]
+        "no-underscore-dangle": [2, { "allowAfterThis": true }]
     }
 }
