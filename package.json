@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/compute/ec2.js",
-    "coverage": "istanbul --include-all-sources cover _mocha -- -R dot --recursive test/"
+    "coverage": "istanbul --include-all-sources cover _mocha -- -R dot --recursive test/",
+    "lint": "eslint"
   },
   "repository": "https://github.com/cloudlibz/nodecloud",
   "author": "scorelab",
@@ -14,8 +15,7 @@
     "aws-sdk": "^2.50.0",
     "config": "^1.26.1",
     "google-cloud": "^0.54.0",
-    "keymirror": "^0.1.1",
-    "node": "^8.0.0"
+    "keymirror": "^0.1.1"
   },
   "keywords": [
     "nodecloud",
