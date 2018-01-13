@@ -12,7 +12,7 @@ const params = {
   bandwidth: 'STRING_VALUE',
   connectionName: 'STRING_VALUE',
   location: 'STRING_VALUE',
-  lagId: 'STRING_VALUE'
+  lagId: 'STRING_VALUE',
 };
 
 // create connection
