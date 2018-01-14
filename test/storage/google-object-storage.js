@@ -1,3 +1,5 @@
+/*eslint linebreak-style: ["error", "windows"]*/
+
 const chai = require('chai');
 
 const assert = chai.assert;
@@ -48,18 +50,20 @@ describe('Google/GCP object storage', () => {
     nock('https://www.googleapis.com:443', { encodedQueryParams: true })
       .post('/storage/v1/b', { location: 'US-CENTRAL1', name: 'ubuntu-httpx', storageClass: 'REGIONAL' })
       .query({ project: 'network-feed' })
-      .reply(200, {
-        kind: 'storage#bucket',
-        id: 'ubuntu-httpx',
-        selfLink: 'https://www.googleapis.com/storage/v1/b/ubuntu-httpx',
-        projectNumber: '98211670959',
-        name: 'ubuntu-httpx',
-        timeCreated: '2017-07-16T13:46:19.011Z',
-        updated: '2017-07-16T13:46:19.011Z',
-        metageneration: 1,
-        location: 'US-CENTRAL1',
-        storageClass: 'REGIONAL',
-        etag: 'CAE=' },
+      .reply(
+        200, {
+          kind: 'storage#bucket',
+          id: 'ubuntu-httpx',
+          selfLink: 'https://www.googleapis.com/storage/v1/b/ubuntu-httpx',
+          projectNumber: '98211670959',
+          name: 'ubuntu-httpx',
+          timeCreated: '2017-07-16T13:46:19.011Z',
+          updated: '2017-07-16T13:46:19.011Z',
+          metageneration: 1,
+          location: 'US-CENTRAL1',
+          storageClass: 'REGIONAL',
+          etag: 'CAE=',
+        },
       ['X-GUploader-UploadID',
         'AEnB2UpNYj3CiWhmXmXRaKVtXa1MU3T-6grP7PPfp_V6DFE0pXYTRvuH-7_xQe1VAa1pDVkbCpY0CFNhIRgbwm44owtxNHeKzC0WMxOn1wbfgSMANph0SLU',
         'ETag',
@@ -83,7 +87,8 @@ describe('Google/GCP object storage', () => {
         'Server',
         'UploadServer',
         'Alt-Svc',
-        'quic=":443"; ma=2592000; v="39,38,37,36,35"']);
+        'quic=":443"; ma=2592000; v="39,38,37,36,35"',
+      ]);
 
     const gcsBucketToCreate = ncGoogle.bucket();
 
