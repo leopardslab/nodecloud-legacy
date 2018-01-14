@@ -4,6 +4,13 @@
         "import"
     ],
     "rules": {
-        "no-underscore-dangle": [2, { "allowAfterThis": true }]
+        "no-underscore-dangle": [2, { "allowAfterThis": true }],
+        "no-unused-vars": [2, {"args": "none"}]
+    },
+    "env" :  {
+        "node" : true ,
+        "mocha" : true
     }
+    
 }
+
