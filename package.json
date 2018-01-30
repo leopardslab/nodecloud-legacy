@@ -2,6 +2,7 @@
   "name": "nodecloud",
   "version": "0.1.0",
   "description": "Unified API for cloud providers",
+  "contributors": "rajikaimal, agentmilindu, malithsen, shlokj",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/compute/ec2.js",
@@ -28,6 +29,7 @@
   "bugs": {
     "url": "https://github.com/cloudlibz/nodecloud/issues"
   },
+ "engines": {},
   "homepage": "https://github.com/cloudlibz/nodecloud#readme",
   "devDependencies": {
     "chai": "^3.5.0",
