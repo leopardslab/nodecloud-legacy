@@ -2,7 +2,7 @@
   "name": "nodecloud",
   "version": "0.1.0",
   "description": "Unified API for cloud providers",
-  "contributors": "rajikaimal, agentmilindu, malithsen, rehrumesh shlokj",
+  "contributors": "rajikaimal, agentmilindu, malithsen, rehrumesh, shlokj",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/compute/ec2.js",
