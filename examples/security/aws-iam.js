@@ -1,5 +1,4 @@
 const nodeCloud = require('../../lib/');
-var assert = require('assert')
 
 const ncAWS = nodeCloud.getProvider('AWS', process.env.ncconf);
 const options = {
