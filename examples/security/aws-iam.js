@@ -7,15 +7,50 @@ const options = {
 };
 
 const iam = ncAWS.iam(options)
-
-const params = {
-	GroupName: 'nodeCloudTest'
+const groupName = "nodeCloudTest"
+const GroupParams = {
+	GroupName: groupName
 };
 
+const GroupPolicyParams = {
+	GroupName: groupName,
+	PolicyArn: "arn:aws:iam::aws:policy/ReadOnlyAccess"
+}
+
 iam
-	.createGroup(params)
+	.createGroup(GroupParams)
 	.then((res) => {
-	assert.equal(res.Group.GroupName, 'nodeCloudTest');
+		console.log(res);
+
+		console.log('Attaching Group Policy');
+
+		iam
+			.attachGroupPolicy(GroupPolicyParams)
+			.then((res) => {
+				console.log(res);
+
+				console.log('Detaching Group Policy');
+
+				iam
+					.detachGroupPolicy(GroupPolicyParams)
+					.then((res) => {
+						console.log(res);
+
+						console.log("Deleting Group");
+
+						iam
+							.deleteGroup(GroupParams)
+							.then((res) => {
+								console.log(res);
+							})
+							.catch((err) => {
+								console.log(err);
+							});
+					})
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 })
 	.catch((err) => {
 		console.log(err);
