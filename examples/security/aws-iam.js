@@ -27,8 +27,8 @@ iam.createGroup(GroupParams)
         return iam.deleteGroup(GroupParams);
     })
     .then((res) => {
-        console.log(res)
+        console.log(res);
     })
 		.catch((err) => {
-			console.log(err);
+			console.error(err);
 		});
