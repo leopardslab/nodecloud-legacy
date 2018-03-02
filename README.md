@@ -37,6 +37,7 @@ yarn add nodecloud
 | Databases | RDBMS | RDS | - |
 |           | NoSQL: key-value | DynamoDB | Cloud Datastore |
 |           | NoSQL: indexed | - | Cloud Datastore |
+| Security/ Authorization  | IAM | AWS IAM | - |
 
 ## Usage
 
