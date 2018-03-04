@@ -1,0 +1,23 @@
+.light-weight{
+    font-weight: 200;
+    font-size: 0.8em
+}
+.header-text{
+    text-align: left;
+    color: #131d41
+}
+.code{
+    font-size: 1.6em;
+}
+.gen-text{
+    font-size: 1.7em;
+    font-family: Helvetica;
+}
+.jumbotron{
+    background-color: lightskyblue
+}
+section{
+border: 1px solid #131d41;
+margin: 20px;
+padding: 20px;
+}
