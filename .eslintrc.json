@@ -4,6 +4,18 @@
         "import"
     ],
     "rules": {
-        "no-underscore-dangle": [2, { "allowAfterThis": true }]
+        "no-underscore-dangle": [
+            0,
+            {
+                "allowAfterThis": true
+            }
+        ],
+        "linebreak-style": "off",
+        "consistent-return": "off",
+        "class-methods-use-this": "off",
+        "no-undef": "off",
+        "array-callback-return": "off",
+        "no-unused-vars": "off",
+        "new-cap": "off"
     }
 }
