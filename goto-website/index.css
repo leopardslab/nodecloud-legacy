@@ -1,6 +1,6 @@
 .light-weight{
     font-weight: 200;
-    font-size: 0.8em
+    font-size: 0.8em;
 }
 .header-text{
     text-align: left;
@@ -14,10 +14,10 @@
     font-family: Helvetica;
 }
 .jumbotron{
-    background-color: lightskyblue
+    background-color: lightskyblue;
 }
 section{
-border: 1px solid #131d41;
-margin: 20px;
-padding: 20px;
+    border: 1px solid #131d41;
+    margin: 20px;
+    padding: 20px;
 }
