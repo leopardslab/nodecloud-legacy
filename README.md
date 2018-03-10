@@ -25,18 +25,18 @@ yarn add nodecloud
 
 ## Service Types
 
-| Service Category | Service | AWS | GCP |
+| Service Category | Service | AWS | GCP | Azure
 | --- | --- | --- | --- |
-| Compute | IaaS | EC2 | Compute Engine |
-|         | Containers | ECS | - |
-| Storage | Object Storage | S3 | Cloud Storage |
-|         | Block Storage  | EBS | Persistent Disks |
-| Networking | Load Balancer | ELB | - |
-|            | Peering | Direct Connect | - |
-|            | DNS | Route53 | Google DNS |
-| Databases | RDBMS | RDS | - |
-|           | NoSQL: key-value | DynamoDB | Cloud Datastore |
-|           | NoSQL: indexed | - | Cloud Datastore |
+| Compute | IaaS | EC2 | Compute Engine | -
+|         | Containers | ECS | - | -
+| Storage | Object Storage | S3 | Cloud Storage | -
+|         | Block Storage  | EBS | Persistent Disks | -
+| Networking | Load Balancer | ELB | - | -
+|            | Peering | Direct Connect | - | -
+|            | DNS | Route53 | Google DNS | -
+| Databases | RDBMS | RDS | - | SQL
+|           | NoSQL: key-value | DynamoDB | Cloud Datastore | -
+|           | NoSQL: indexed | - | Cloud Datastore | -
 
 ## Usage
 
