@@ -10,13 +10,13 @@ const lambda = ncAWS.lambda(options)
 
 const functionParams = {
     Code: {
-      S3Bucket: 'nodecloud-test',
-      S3Key: 'test-function.zip',
+      S3Bucket: 'nodecloud-test', // This bucket should exist
+      S3Key: 'test-function.zip', // This zip file should be present in the bucket
     },
     FunctionName: 'nodecloud-test-function',
     Handler: 'test-function.handler',
     Runtime: 'nodejs6.10',
-    Role: 'arn:aws:iam::201418792138:role/nodecloud-test-role'
+    Role: 'arn:aws:iam::1234567891:role/nodecloud-test-role' // Replace with actual Role
 };
 
 const functionInvokeDeleteParams = {
