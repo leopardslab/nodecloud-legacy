@@ -29,7 +29,7 @@ const options = {
   apiVersion: '2015-03-31',
 };
 
-const lambda = ncAWS.lambda(options)
+const functions = ncAWS.functions(options)
 
 const functionParams = {
     Code: {
@@ -42,7 +42,7 @@ const functionParams = {
     Role: 'arn:aws:iam::1234567891:role/nodecloud-test-role' // Replace with actual Role
 };
 
-lambda
+functions
   .createFunction(functionParams)
   .then((res) => {
     console.log(res);
@@ -59,7 +59,7 @@ const functionDeleteParams = {
   FunctionName: 'nodecloud-test-function',
 };
 
-lambda
+fuctions
   .deleteFunction(functionDeleteParams)
   .then((res) => {
     console.log(res);
@@ -72,7 +72,7 @@ lambda
 ### List all lambda functions
 
 ```js
-lambda
+functions
   .listFunctions({}) // no params since this will list all functions
   .then((res) => {
     console.log(res);
@@ -91,7 +91,7 @@ const functionInvokeParams = {
   FunctionName: 'nodecloud-test-function',
 };
 
-lambda
+functions
   .invokeFunction(functionInvokeParams)
   .then((res) => {
     console.log(res);
