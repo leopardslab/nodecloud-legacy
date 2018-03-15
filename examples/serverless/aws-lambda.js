@@ -6,7 +6,7 @@ const options = {
   apiVersion: '2015-03-31',
 };
 
-const lambda = ncAWS.lambda(options)
+const lambda = ncAWS.functions(options)
 
 const functionParams = {
     Code: {
