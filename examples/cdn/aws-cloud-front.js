@@ -1,6 +1,6 @@
 const nodecloud = require('../../lib');
 
-const ncAWS = nodecloud.getProvider("AWS");
+const ncAWS = nodecloud.getProvider("AWS", process.env.ncconf);
 
 const options = {
   apiVersion: "2016-11-15"
