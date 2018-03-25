@@ -36,7 +36,7 @@ yarn add nodecloud
 |            | DNS | Route53 | Google DNS |
 | Databases | RDBMS | RDS | - |
 |           | NoSQL: key-value | DynamoDB | Cloud Datastore |
-|           | NoSQL: indexed | - | Cloud Datastore |
+|           | NoSQL: indexed | SimpleDB | Cloud Datastore |
 | Security/ Authorization  | IAM | AWS IAM | - |
 
 ## Usage
