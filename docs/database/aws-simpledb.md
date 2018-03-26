@@ -55,6 +55,7 @@ simpleDB.deleteDomain(params)
 ```
 
 ### Create an Item
+
 ```js
 const params = {
   Attributes: [ /* required */
@@ -84,6 +85,7 @@ simpleDB.createItem(params)
 ```
 
 ### Delete an Item
+
 ```js
 simpleDB.deleteItem(params)
   .then((res) => {
@@ -95,6 +97,7 @@ simpleDB.deleteItem(params)
 ```
 
 ### Update an Item
+
 ```js
 simpleDB.updateItem(params)
   .then((res) => {
@@ -106,6 +109,7 @@ simpleDB.updateItem(params)
 ```
 
 ### Query an Item
+
 ```js
 const params = {
   SelectExpression: 'STRING_VALUE', /* required */
