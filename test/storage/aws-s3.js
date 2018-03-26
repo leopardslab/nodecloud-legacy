@@ -14,7 +14,7 @@ describe('AWS S3', () => {
   before(() => {});
 
   it('should create S3 bucket', (done) => {
-    nock('https://ncbucketcr.s3-us-west-2.amazonaws.com:443', {
+    nock('https://ncbucketcr.s3.us-west-2.amazonaws.com:443', {
       encodedQueryParams: true,
     })
       .put(
@@ -50,7 +50,7 @@ describe('AWS S3', () => {
   });
 
   it('should not delete S3 bucket', (done) => {
-    nock('https://ncbucketcr.s3-us-west-2.amazonaws.com:443', {
+    nock('https://ncbucketcr.s3.us-west-2.amazonaws.com:443', {
       encodedQueryParams: true,
     })
       .delete('/')
@@ -90,7 +90,7 @@ describe('AWS S3', () => {
   });
 
   it('should create multipart upload', (done) => {
-    nock('https://ncbucketcr.s3-us-west-2.amazonaws.com:443', {
+    nock('https://ncbucketcr.s3.us-west-2.amazonaws.com:443', {
       encodedQueryParams: true,
     })
       .post('/largeobject')
@@ -126,7 +126,7 @@ describe('AWS S3', () => {
   });
 
   it('should list all buckets', (done) => {
-    nock('https://s3-us-west-2.amazonaws.com:443', { encodedQueryParams: true })
+    nock('https://s3.us-west-2.amazonaws.com:443', { encodedQueryParams: true })
       .get('/')
       .reply(
         200,
@@ -146,7 +146,7 @@ describe('AWS S3', () => {
           'AmazonS3'
         ]
       );
-
+      
     s3.list({}).then((res) => {
       assert.typeOf(res.Buckets, 'array');
       done();
@@ -154,7 +154,7 @@ describe('AWS S3', () => {
   });
 
   it('should upload an arbitary sized buffer, blob, or stream', (done) => {
-    nock('https://ncbucketcr.s3-us-west-2.amazonaws.com:443', {
+    nock('https://ncbucketcr.s3.us-west-2.amazonaws.com:443', {
       encodedQueryParams: true,
     })
       .put('/key', 'ncunittest')
@@ -178,7 +178,7 @@ describe('AWS S3', () => {
     s3.upload(params).then((res) => {
       assert.equal(
         res.Location,
-        `https://${params.Bucket}.s3-us-west-2.amazonaws.com/key`
+        `https://${params.Bucket}.s3.us-west-2.amazonaws.com/key`
       );
       assert.equal(res.Bucket, params.Bucket);
       done();
