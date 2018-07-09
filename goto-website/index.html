@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ). This will make building products among multiple cloud services and its services easier for the developer.">
+    <meta name="author" content="NodeCloud">
+
+    <title>NodeCloud</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <div id="mainContainer">
+        <header class="container-fluid">
+            <div class="row jumbotron">
+                <div class="col-md-3">
+                    <img src="./logo.png" alt="NodeCloud Logo" class="img img-responsive img-rounded" height="330 px" width="330 px" />
+                </div>
+                <div class="col-md-9">
+                    <h1>
+                        <div class="header-text">NodeCloud</div>
+                    </h1>
+                    <hr />
+                    <h2>
+                        <span class="light-weight">
+                            NodeCloud is a standard library to get a single API among common cloud service providers (Ex. AWS, GCP, Azure.. ).
+                            <br />
+                            <br /> This will make building products among multiple cloud services and its services easier for the
+                            developer.
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </header>
+        <section>
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <h2 class="header-text">Install</h2>
+                            <hr>
+                            <pre class="code">
+ npm install nodecloud
+ or
+ yarn add nodecloud</pre>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <h2 class="header-text">Service Providers</h2>
+                            <hr>
+                            <ul class="gen-text">
+                                <li>Amazon web services (AWS)</li>
+                                <br />
+                                <li>Google cloud platform (GCP)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <br />
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <h2 class="header-text">Service Types</h2>
+                        <hr>
+                        <table class="table table-striped table responsive table-bordered gen-text">
+                            <thead>
+                                <tr>
+                                    <th>Service Category</th>
+                                    <th>Service</th>
+                                    <th>AWS</th>
+                                    <th>GCP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Compute</td>
+                                    <td>IaaS</td>
+                                    <td>EC2</td>
+                                    <td>Compute Engine</td>
+                                </tr>
+                                <tr>
+                                    <td>Containers</td>
+                                    <td>ECS</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Storage</td>
+                                    <td>Object Storage</td>
+                                    <td>S3</td>
+                                    <td>Cloud Storage</td>
+                                </tr>
+                                <tr>
+                                    <td>Block Storage</td>
+                                    <td>EBS</td>
+                                    <td>Persistent Disks</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Networking</td>
+                                    <td>Load Balancer</td>
+                                    <td>ELB</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Peering</td>
+                                    <td>Direct Connect</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>DNS</td>
+                                    <td>Route53</td>
+                                    <td>Google DNS</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Databases</td>
+                                    <td>RDBMS</td>
+                                    <td>RDS</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>NoSQL: key-value</td>
+                                    <td>DynamoDB</td>
+                                    <td>Cloud Datastore</td>
+                                </tr>
+                                <tr>
+                                    <td>NoSQL: indexed</td>
+                                    <td>-</td>
+                                    <td>Cloud Datastore</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+            <br />
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <h2 class="header-text">Usage</h2>
+                        <hr>
+
+                        <pre class="code">
+ const nodeCloud = require("nodecloud");
+ // AWS
+ const ncAWS = nodeCloud.getProvider("AWS");
+ const options = {
+     apiVersion: "2016-11-15"
+ };
+ 
+ const params = {
+     ImageId: "ami-10fd7020", // amzn-ami-2011.09.1.x86_64-ebs
+     InstanceType: "t1.micro",
+     MinCount: 1,
+     MaxCount: 1
+ };
+ const instanceParams = {
+     Key: "Name",
+     Value: "Node Cloud demo"
+ };
+ 
+ const ec2 = ncAWS.compute(options);
+ ec2
+     .createInstance(params, instanceParams)
+     .then(res => {
+        console.log(`All done ! ${res}`);
+     })
+     .catch(err => {
+        console.log(`Oops something happened ${err}`);
+     });</pre>
+                    </div>
+                </div>
+            </article>
+            <br />
+            <article>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <h2 class="header-text">Development Setup</h2>
+                            <hr>
+                            <pre class="code">
+ $ git clone https://github.com/cloudlibz/nodecloud
+ $ cd nodecloud
+ $ yarn install </pre>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <h2 class="header-text">Run Unit Tests</h2>
+                            <hr>
+                            <pre class="code">
+ $ yarn test</pre>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
